@@ -1,0 +1,67 @@
+<template name="register">
+	<div class="container">
+ 	<form id="register-form" action="action" class="form-horizontal">
+ 		<legend>Register Here</legend>
+    	<div class="col-lg-6">
+    		<div class="form-group">
+    			<input type="email" id="account-email" class="form-control" placeholder="Email" />
+    		</div>
+    		<div class="form-group">
+       			<input type="password" id="account-password" class="form-control" placeholder="Password" />
+       		</div>
+       		<div class="form-group">
+       			<input type="password" class="form-control" placeholder="Confirm Password"/>
+       		</div>
+       		<div class="form-group">
+       			<input type="submit" id="create-account" class="btn btn-primary" value="Create an Account" />
+       		</div>
+     	</div>
+   </form>
+   <p>Already registered, <a href="/">click here</a> to login</p>
+</div>
+</template>
+
+<template name="login">
+	<div class="container">
+		<form id="login-form" action="action" class="form-horizontal">
+			<legend>Login Here</legend>
+      		<div class="col-lg-6">
+      			<div class="col-lg-6">
+      				<div class="form-group">
+        				<input type="email" id="login-email" class="form-control" placeholder="Email" />
+        			</div>
+        			<div class="form-group">
+        				<input type="password" id="login-password" class="form-control" placeholder="Password" />
+        			</div>
+        			<div class="form-group">
+        				<input type="submit" id="login-button" value="Sign in" class="btn btn-primary" />
+        			</div>
+        		</div>
+     		</div>
+   		</form> 
+   		<p><a href="#" id="login">Login with Github</a></p>
+   		<p>Not registered yet, <a href="/register">click here</a> to register</p>
+	</div>
+</template>
+
+<template name="passwordrecovery">
+{{#if resetPassword}}
+     <form id="new-password" action="action">
+        <div>
+           <input type="text" id="new-password-password" />
+           <input type="submit" value="Change Password" />
+        </div>
+      </form>
+  {{else}}
+      <form id="recovery-form" action="action">
+        <div>
+           <input type="text" id="recovery-email" />              
+           <input type="submit" value="Send Reset Instructions" />
+         </div>
+      </form>
+  {{/if}}
+</template>
+
+<template name="prof">
+	Hi, you are logged in.     ({{email}}) <a href="#" class="logout">Logout</a>
+</template>
